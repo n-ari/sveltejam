@@ -101,7 +101,6 @@
       color: 1 - player.color
     };
     let collided = blocks.filter(block => collisionBlock(newBlock, block, 1));
-    console.log(collided.length);
     let bottomCollided = collided.filter(
       block => newBlock.y + newBlock.r < block.y - block.r + 3
     );
@@ -207,21 +206,17 @@
 
   h1 {
     color: #ff3e00;
-    text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
+  }
+  h2 {
+    color: #ff3e00;
+    font-size: 2em;
+    font-weight: bold;
   }
 
   svg {
     background-color: #98d9fa;
-  }
-
-  rect.player {
-    fill: red;
-  }
-
-  rect.block {
-    fill: blue;
   }
 
   rect.black {
@@ -233,10 +228,14 @@
   }
 </style>
 
+<svelte:head>
+	<title>Ikaruga Block Filling / traP3jam 2020-03-27</title>
+</svelte:head>
 <svelte:window on:keydown={handleKeydown} />
 
 <main>
-  <h1>traP3jam 2020-03-27</h1>
+  <h1>Ikaruga Block Filling</h1>
+  <h2>traP3jam 2020-03-27</h2>
   <svg width="{WIDTH}px" height="{HEIGHT}px">
     <!-- score -->
     <!-- <text x="10" y="20">score: {score} points</text> -->
